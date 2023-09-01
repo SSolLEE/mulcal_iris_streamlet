@@ -4,10 +4,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 def main():
 
-    st.martkdown("# Hello World")
+    st.markdown("# Hello World")
     st.write(np.__version__)
     st.write(pd.__version__)
 
