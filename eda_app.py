@@ -11,3 +11,27 @@ def run_eda_app():
 
     st.subheader("탐색적 자료 분석 페이지")
     st.subheader("잘 진행 중!")
+
+    iris_df = pd.read_csv("data\iris.csv")
+    # 메뉴 지정
+    submenu = st.sidebar.selectbox("submenu", ['통계', '시각화', '그래프'])
+    if submenu == "submenu":
+        st.subheader("submenu")
+    elif submenu == "통계":
+        st.subheader("통계")
+    elif submenu == "시각화":
+        st.subheader("시각화")
+        fig1 = px.scatter(iris_df,
+                          x = 'sepal_width',
+                          y = 'sepal_length',
+                          color = 'species',
+                          size = 'petal_width',
+                          hover_data=['petal_length'],
+                          title = "Scatter Plot")
+        st.plotly_chart(fig1)
+    elif submenu == "그래프":
+        st.subheader("그래프")
+    else:
+        pass
+
+    st.dataframe(iris_df)
