@@ -10,5 +10,5 @@ def main():
     st.write(np.__version__)
     st.write(pd.__version__)
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         main()
